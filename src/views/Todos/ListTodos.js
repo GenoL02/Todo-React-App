@@ -100,17 +100,21 @@ class ListTodos extends React.Component {
                       )}
                     </>
                   )}
-                  {/* <input type="checkbox" />
-                  <span>{item.title}</span> */}
                   <div className="buttons">
                     <button
                       type="button"
+                      className="delete"
                       onClick={() => this.handleDeleteTodo(item)}
                     >
                       Delete
                     </button>
                     <button
                       type="button"
+                      className={
+                        isEmptyObj === false && editTodo.id === item.id
+                          ? "save-button"
+                          : "edit-button"
+                      }
                       onClick={() => this.handleEditTodo(item)}
                     >
                       {isEmptyObj === false && editTodo.id === item.id
